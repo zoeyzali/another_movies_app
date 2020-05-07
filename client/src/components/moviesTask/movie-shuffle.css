@@ -1,0 +1,86 @@
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    opacity: .8;
+    background: rgb(44, 27, 27);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    max-width: 600px;
+    width: 100%;
+    /* height: auto; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    margin: 0.5rem auto;
+    background-color: white;
+    box-shadow: 0 .125em .125em rgba(0, 0, 0, .1);
+    padding: 1rem 0 0.4rem;
+
+}
+
+.modal__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    /* align-items: center; */
+    /* margin: 1rem auto; */
+
+}
+
+.modal__header h3 {
+    text-align: center;
+    letter-spacing: 0.15rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 0.2rem 0;
+}
+
+form {
+    position: relative;
+    width: 75%;
+    padding: 0.4rem 0.5rem 0.5rem;
+}
+
+form h4 {
+    margin: 0.2rem auto 1rem;
+    text-transform: capitalize;
+}
+
+.modal__body input {
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.modal__body label {
+    position: absolute;
+    /* right: 50%; */
+    left: 50%;
+    width: 80%;
+    text-align: left;
+}
+
+.modal__body .btn__row {
+    margin-top: auto;
+}
+
+.modal__body button.add__btn {
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+
+@media screen and (max-width:600px) {}

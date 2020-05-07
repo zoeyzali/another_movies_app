@@ -1,0 +1,244 @@
+.movies__detail {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    max-width: 980px;
+    padding: 1rem;
+    margin: 0.8rem auto 0.5rem;
+    text-align: left;
+    /* min-height: 100vh; */
+}
+
+.movies__detail h1,
+.movies__detail h2,
+.movies__detail h3 {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+}
+
+.content__top {
+    display: flex;
+    align-items: baseline;
+    padding: 0.8rem 0;
+    position: relative;
+    font-weight: 400;
+}
+
+.content__top h1 {
+    font-size: 2em;
+    font-weight: 700;
+    /* text-align: left; */
+    letter-spacing: -1.5px;
+    margin: 0.2rem 0.5rem 0.4rem 0;
+    text-transform: capitalize;
+}
+
+.content__top span,
+.content__top h3 {
+    font-size: 1.2em;
+}
+
+.content__top h3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-weight: 500;
+}
+
+
+.details__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    filter: contrast(120%);
+}
+
+.details__wrapper figure,
+.details__wrapper p,
+p,
+span {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+.details__wrapper figure {
+    max-width: 900px;
+}
+
+.details__wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.details__wrapper p {
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 1.2;
+    padding: 0.6rem 0.8rem;
+    max-width: 60ch;
+    background: maroon;
+    mix-blend-mode: hard-light;
+}
+
+.rating {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.1rem 0 1.8rem;
+    float: right;
+}
+
+.star__rating {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.star {
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1rem;
+    background-color: grey;
+    -webkit-clip-path: polygon(50% 0%,
+            63% 38%,
+            100% 38%,
+            69% 59%,
+            82% 100%,
+            50% 75%,
+            18% 100%,
+            31% 59%,
+            0% 38%,
+            37% 38%);
+    clip-path: polygon(50% 0%,
+            63% 38%,
+            100% 38%,
+            69% 59%,
+            82% 100%,
+            50% 75%,
+            18% 100%,
+            31% 59%,
+            0% 38%,
+            37% 38%);
+}
+
+.star.selected {
+    background-color: gold;
+}
+
+.content__headings {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    /* flex-basis: 10%; */
+}
+
+
+/* .content__headings:last-child span:last-child {
+    flex: 0;
+    align-self: center;
+    margin-left: 21%;
+    text-align: left;
+} */
+
+.content__headings p {
+    font-weight: 500;
+    font-size: 0.9em;
+    flex: 1;
+}
+
+.content__headings span {
+    font-size: 0.85em;
+    flex: 1;
+    text-align: left;
+}
+
+.content__headings span:nth-last-child(2) {
+    /* text-align: center; */
+    align-self: center;
+    flex: 0;
+}
+
+/* .content__headings:last-child span:nth-last-child(2) {
+    flex: 0;
+    align-self: center;
+    display: inline-flex;
+} */
+
+.content__headings:last-child span:last-child {
+    /* text-align: center; */
+    align-self: center;
+    /* flex: 0; */
+}
+
+.content__headings:last-child span:nth-last-child(2)::after {
+    content: "&";
+    font-weight: bold;
+    margin-inline-start: 0.2rem;
+    margin-inline-end: 0.2rem;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .movies__detail {
+        display: block;
+    }
+
+    .details__wrapper,
+    .content__top,
+    .content__top h1 {
+        display: block;
+        overflow: hidden;
+        margin-block-start: 0;
+    }
+
+    .content__top h3 {
+        font-size: 4vw;
+        display: block;
+    }
+
+    .details__wrapper p,
+    .content__top span {
+        overflow: hidden;
+        font-size: 3vw;
+    }
+
+    /* .content__headings:last-child span:nth-last-child(2),
+    .content__headings:last-child span:last-child {
+        flex: 1;
+        margin-left: 0;
+    }
+
+    .content__headings:last-child {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        flex-wrap: wrap;
+        justify-content: center;
+    } */
+}
+
+
+
+@media screen and (min-width: 980px) {
+    .movies__detail {
+        padding: 0;
+        margin-top: -0.2rem;
+    }
+
+    .content__top h1 {
+        font-size: 3vw;
+    }
+
+    .details__wrapper figure {
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
