@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './movies.css'
-import { tmdbKey } from '../../utils/apikey.js'
+// import { tmdbKey } from '../../utils/apikey.js'
 import { Link } from 'react-router-dom'
 import { useModal } from '../../utils/useModal'
 import { ShuffleModal } from './ShuffleModal'
@@ -24,11 +24,11 @@ export const MoviesList = ( props ) => {
     useEffect( () => {
         const fetchMovies = async () => {
             setLoading( true )
-            const response = await fetch( `https://api.themoviedb.org/4/list/139797?page=1&sort_by=vote_average.desc&api_key=${tmdbKey}` )
+            const response = await fetch( `https://api.themoviedb.org/4/list/139797?page=1&sort_by=vote_average.desc&api_key=${process.env.REACT_APP_TMDB_KEY}` )
             const result = await response.json()
             // console.log( result, "result" )
 
-            const similarMovies = await fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${tmdbKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=8&without_genres=35,14with_keywords=drama,family&with_genres=18
+            const similarMovies = await fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=8&without_genres=35,14with_keywords=drama,family&with_genres=18
     ` )
             const similarJson = await similarMovies.json()
             // console.log( similarJson.results, "similarsList" )

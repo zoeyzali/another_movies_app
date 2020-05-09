@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Star } from './Star'
-import { tmdbKey, baseURL, sessionId } from '../../utils/apikey'
+// import { tmdbKey, baseURL, sessionId } from '../../utils/apikey'
 
 export const MovieRating = ( { totalStars, movie } ) => {
     const [starsSelected, starsSelect] = useState( 0 )
 
     const rateMovie = async () => {
         try {
-            const response = await fetch( `${baseURL}/${movie.id}/rating?api_key=${tmdbKey}&session_id=${sessionId}`, {
+            const response = await fetch( `${process.env.REACT_APP_BASE_URL}/${movie.id}/rating?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${process.env.REACT_APP_SESSION_ID}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
