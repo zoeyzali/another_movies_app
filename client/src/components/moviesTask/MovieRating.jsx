@@ -14,7 +14,6 @@ export const MovieRating = ( { totalStars, movie } ) => {
                 body: JSON.stringify( { value: starsSelected } )
             } )
             const result = await response.json()
-            console.log( result, "result" )
             if ( result.status_message === "success" )
                 starsSelect( movie.account_states.rated.value )
         } catch ( error ) {

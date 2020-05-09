@@ -9,7 +9,7 @@
     "client:build": "react-scripts build",
     "build": "cd client && npm run build"
   },
-  "homepage": "/movies",
+  "homepage": "/movies/",
   "repository": {
     "type": "git"
   },

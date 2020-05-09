@@ -24,14 +24,14 @@ export const RouletteResults = ( props ) => {
                 genresJson.results.length = maxNr
                 setData( [...genresJson.results] )
             }
-            console.log( data, "divided/maxNr" )
+            // console.log( data, "divided/maxNr" )
         }
         loadData()
         // eslint-disable-next-line
     }, [props.id] )
 
 
-    console.log( props, count, "props roulette-results" )
+    // console.log( props, count, "props roulette-results" )
 
     // const filterByGenre = ( id ) => {
     //     const filtered = props.genres.filter( genre => genre.id === id)
