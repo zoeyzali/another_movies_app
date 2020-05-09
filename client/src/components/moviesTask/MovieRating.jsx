@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Star } from './Star'
-// import { tmdbKey, baseURL, sessionId } from '../../utils/apikey'
 
 export const MovieRating = ( { totalStars, movie } ) => {
     const [starsSelected, starsSelect] = useState( 0 )

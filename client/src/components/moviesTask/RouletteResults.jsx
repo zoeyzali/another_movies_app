@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { tmdbKey } from '../../utils/apikey'
 
 export const RouletteResults = ( props ) => {
 
@@ -14,7 +13,7 @@ export const RouletteResults = ( props ) => {
     useEffect( () => {
         const loadData = async () => {
             setLoading( true )
-            const genresRes = await fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${tmdbKey}&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1&vote_average.gte=8&vote_count.gte=100&with_genres=${props.id}
+            const genresRes = await fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1&vote_average.gte=8&vote_count.gte=100&with_genres=${props.id}
     `)
             const genresJson = await genresRes.json()
             // console.log( genresJson.results[0].genre_ids[0], "api results" )

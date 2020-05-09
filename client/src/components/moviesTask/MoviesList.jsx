@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './movies.css'
-// import { tmdbKey } from '../../utils/apikey.js'
 import { Link } from 'react-router-dom'
 import { useModal } from '../../utils/useModal'
 import { ShuffleModal } from './ShuffleModal'

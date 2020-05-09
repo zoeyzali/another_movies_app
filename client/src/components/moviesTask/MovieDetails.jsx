@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import { tmdbKey, sessionId } from '../../utils/apikey'
 import './movie-details.css'
 import { MovieRating } from './MovieRating'
 
