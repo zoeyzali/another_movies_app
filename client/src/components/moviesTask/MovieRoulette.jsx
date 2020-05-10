@@ -8,13 +8,14 @@ export const MovieRoulette = ( props ) => {
         genres: genresList,
         isSelected: "",
         currentGenre: "",
-        elMssg: ""
+        elMssg: "",
     } )
+
+
 
     const closeModals = () => {
         props.closeModals()
     }
-    // console.log( props, "props" )
 
     const handleSelected = ( e ) => {
         let genreId = e.target.id
@@ -35,6 +36,8 @@ export const MovieRoulette = ( props ) => {
             isSelected: state.isSelected
         } )
     }
+
+
 
     return (
         <React.Fragment>
@@ -81,23 +84,4 @@ export const MovieRoulette = ( props ) => {
     )
 }
 
-
-
-
-
-//{state.genres && filterByGenre()}
-// { state.isSelected }
-
-
-// {state.currentGenre !== null ? state.currentGenre : ""}
-//**     let id
-// const filteredGenre = genresList.filter( genre => Object.values( genre ) )
-//     .map( ( singleGenre, i ) => {
-//         console.log( "singleGenreObjVal=>", Object.values( singleGenre ) )
-//         console.log( i, "index" )
-//         if ( Object.values( singleGenre )[i] === i ) {
-//             Object.values( singleGenre )[i] = id
-//         }
-//         setState( { isSelected: singleGenre[i] } )
-//     } )
 

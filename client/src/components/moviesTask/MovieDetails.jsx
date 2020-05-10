@@ -74,7 +74,7 @@ export const MovieDetails = ( { match } ) => {
                         {movie.production_countries && movie.production_countries.length > 0 &&
                             movie.production_countries.map( country => {
                                 return (
-                                    <span key={country.iso_3166_1}>{country.iso_3166_1 === "GB" || country.iso_3166_1 === "US" ? country.iso_3166_1 : country.name.slice( 0, 3 ).toUpperCase()}
+                                    <span key={country.iso_3166_1}>{country.iso_3166_1.toUpperCase()}
                                     </span>
                                 )
                             } )
