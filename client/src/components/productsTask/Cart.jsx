@@ -2,17 +2,13 @@ import React, { useEffect } from 'react'
 
 export const Cart = ( props ) => {
     const cart = props.cart
-
     // let localCart = cart && localStorage.getItem( 'cart' ) ? JSON.parse( localStorage.getItem( 'cart' ) ) : []
 
-    // const totaltems = cart.length
     useEffect( () => {
-
     }, [] )
 
 
     // console.log( "CART totalItems && subTotal", totaltems, props.totalPrice )
-
     return (
         <div className="cart__container">
             <div className="cart__list">

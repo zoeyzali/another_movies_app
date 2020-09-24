@@ -13,8 +13,8 @@ export const MoviesList = ( props ) => {
     const [toggleLoad, setToggleLoad] = useState( false )
 
     // A cleaner way of chaining API calls
-    // const [respGlobal, respRepos] = await Promise.all( [axios( api.github.com/users/${ username } ), 
-    // axios( api.github.com/users/${ username }/repos )] )
+    // const [respGlobal, respRepos] = await Promise.all([axios(api.github.com/users/${username}), 
+    // axios(api.github.com/users/${username}/repos)])
 
     const tmbdKey = process.env.REACT_APP_TMDB_KEY
     const url = "https://api.themoviedb.org"
@@ -25,7 +25,6 @@ export const MoviesList = ( props ) => {
             const response = await fetch( `${url}/4/list/139797?page=1&sort_by=vote_average.desc&api_key=${tmbdKey}` )
             const result = await response.json()
             // console.log( result, "result" )
-
             const loadMore = await fetch( `${url}/3/discover/movie?api_key=${tmbdKey}&language=en-US&sort_by=popularity.desc&include_adult=false& include_video=false&page=1&vote_average.gte=8&without_genres=35,14with_keywords=drama,family&with_genres=18` )
             const movies = await loadMore.json()
             setLoading( false )
@@ -35,8 +34,6 @@ export const MoviesList = ( props ) => {
         // eslint-disable-next-line
     }, [] )
     // console.log( data.movies, "all data", data.moreMovies )
-
-    const { movies, moreMovies } = data
 
     const appendLoadMovies = () => {
         setLoading( true )
@@ -52,6 +49,7 @@ export const MoviesList = ( props ) => {
         props.history.push( '/movies' )
     }
 
+    const { movies, moreMovies } = data
 
     if ( loading ) {
         return (

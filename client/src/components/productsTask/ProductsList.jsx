@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import jsonData from '../../data/products.json'
 import { Product } from './Product'
 import { Cart } from './Cart'
-// import { EventHandlers } from './EventHandlers'
 
 
 export const ProductsList = () => {
@@ -36,7 +35,6 @@ export const ProductsList = () => {
             tempCart[index].quantity += item.quantity
             tempCart[index].subTotal += item.subTotal
             // tempCart[index].quantity += Number( tempCart[index].quantity ) + Number( productQty )
-
             setCart( tempCart )
             setQuantity( tempCart[index].quantity )
 
@@ -69,9 +67,6 @@ export const ProductsList = () => {
             return item.id === productId
         } )
     }
-
-
-
 
 
     return (
