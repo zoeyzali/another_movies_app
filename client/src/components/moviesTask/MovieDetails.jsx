@@ -23,7 +23,7 @@ export const MovieDetails = ( { match } ) => {
 
 
     return (
-        <div className="">
+        <div className="movies__detail wrapper">
             {movie &&
                 <div key={movie.id} className="movies__detail">
                     <div className="content__top">
@@ -49,8 +49,6 @@ export const MovieDetails = ( { match } ) => {
                         <p>{movie.overview}</p>
                     </div>
                     <div className="rating">
-                        {                        // {console.log( movie.account_states.rated, "already rated-value" )}
-                        }
                         <MovieRating totalStars={10}
                             movie={movie} id={movie.id}
                         // rated={movie.account_states.rated.value}
@@ -71,13 +69,14 @@ export const MovieDetails = ( { match } ) => {
                     </div>
                     <div className="content__headings">
                         <p>Country:</p>
-                        {movie.production_countries && movie.production_countries.length > 0 &&
+                        {movie.production_countries && movie.production_countries.length > 0 ?
                             movie.production_countries.map( country => {
                                 return (
-                                    <span key={country.iso_3166_1}>{country.iso_3166_1.toUpperCase()}
+                                    <span key={country.iso_3166_1}>
+                                        {country.iso_3166_1.toUpperCase()}
                                     </span>
                                 )
-                            } )
+                            } ) : null
                         }
                     </div>
                 </div>

@@ -70,24 +70,8 @@ export const ProductsList = () => {
         } )
     }
 
-    // const totaltemsInCart = () => {
-    //     let total = 0
-    //     total = cart.length
-    //     setTotaltems( total )
-    //     // console.log( tempCart.length, "tempcartQty", "and total", total )
-    // }
-
-    // const getTotalAmount = () => {
-    //     let total = 0
-    //     let tempCart = cart
-    //     for ( let i = 0; i < tempCart.length; i++ ) {
-    //         total += tempCart[i].price * parseInt( tempCart[i].quantity )
-    //     }
-    //     setSubTotal( total )
-    // }
 
 
-    // console.log( checkProduct( 1 ), "checkproduct" )
 
 
     return (

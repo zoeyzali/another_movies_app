@@ -12,12 +12,14 @@ function App() {
     <Router>
       <Header />
       <div className="App">
+        <Route exact path="/">
+          <h1 className="App__header">JUST ANOTHER MOVIES APP</h1>
+        </Route>
         <Route exact path="/movies/" component={MoviesList} />
         <Route exact path="/movies/:id" component={MovieDetails} />
         <Route exact path="/products" component={ProductsList} />
       </div>
     </Router>
-
   )
 }
 

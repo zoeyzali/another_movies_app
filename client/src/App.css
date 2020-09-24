@@ -4,9 +4,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   /* font-size: calc(10px + 2vmin); */
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+}
+
+.App__header {
+  font-weight: 200;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 1rem;
+  letter-spacing: 1px;
 }
 
 header {

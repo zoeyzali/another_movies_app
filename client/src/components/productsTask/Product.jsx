@@ -25,11 +25,6 @@ export const Product = ( props ) => {
         setQuantity( props.quantity )
     }
 
-    // const resetQuantity = () => {
-    //     setQuantity( null )
-    // }
-
-    // console.log( "PRODUCT PROPS", props )
 
 
     return (

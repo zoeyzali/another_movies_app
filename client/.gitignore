@@ -24,6 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 client/.env
-client/src/util/apiKey.js
 # Local Netlify folder
 .netlify
+/src/utils/apiKey.js
+/src/components/Globals/EventHandlers.jsx

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 // import { genresList } from '../../utils/genresList'
 
 export const RouletteResults = ( props ) => {
-
     const [data, setData] = useState()
     const posterUrl = `https://image.tmdb.org/t/p/w185`
     const [loading, setLoading] = useState( false )
@@ -11,15 +10,16 @@ export const RouletteResults = ( props ) => {
     // const [count, setCount] = useState( 0 )
     // const [current, setCurrent] = useState()
 
-
+    // Experimental/to be fixed
     useEffect( () => {
         const loadData = async () => {
             setLoading( true )
             const genresRes = await fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=8&vote_count.gte=10&with_genres=${props.id}
     `)
             const genresJson = await genresRes.json()
-            // console.log( genresJson.results[0].genre_ids[0], "api results" )
             setLoading( false )
+            // console.log( genresJson.results[0].genre_ids[0], "api results" )
+            //     }
             // if ( genresJson.results.length > 0 ) {
             //     let maxNr = genresJson.results.length / 10
             //     setCount( maxNr )
@@ -30,7 +30,6 @@ export const RouletteResults = ( props ) => {
             //         // console.log( genre[i], "indx", genre )
             //         // console.log( i, "i" )
             //         setCurrent( genre[i] )
-            //     }
             // }
             // setData( [...genresJson.results] )
             setData( genresJson.results[getRandom( genresJson.results.length )] )
@@ -76,7 +75,7 @@ export const RouletteResults = ( props ) => {
     return (
         <React.Fragment>
             {loading && <div className="loading__wrapper">
-                <p>...loadin'</p>
+                <p>...Loadin'</p>
             </div>
             }
             {selectedGenre === null ? setSelected( "Selected a genre" ) : mapList()}
