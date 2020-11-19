@@ -6,7 +6,6 @@ import { Header } from './components/Globals/Header'
 import './App.css'
 import { MovieDetails } from './components/moviesTask/MovieDetails'
 
-
 function App() {
   return (
     <Router>
@@ -22,5 +21,4 @@ function App() {
     </Router>
   )
 }
-
 export default App

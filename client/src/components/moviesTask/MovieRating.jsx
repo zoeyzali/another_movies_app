@@ -6,25 +6,25 @@ export const MovieRating = ( { totalStars, movie } ) => {
 
     const rateMovie = async () => {
         try {
-            const response = await fetch( `${process.env.REACT_APP_BASE_URL}/${movie.id}/rating?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${process.env.REACT_APP_SESSION_ID}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify( { value: starsSelected } )
-            } )
+            const response = await fetch(
+                `${process.env.REACT_APP_BASE_URL}/${movie.id}/rating?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${process.env.REACT_APP_SESSION_ID}`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify( { value: starsSelected } )
+                } )
             const result = await response.json()
             if ( result.status_message === "success" )
                 starsSelect( movie.account_states.rated.value )
         } catch ( error ) {
-            console.log( error, "catchin' error" )
+            console.log( `Catchin' Error ${error}` )
         }
     }
 
-    // console.log( starsSelected, "selected MovieRating" )
     return (
         <div className="star__rating">
-
             {[...Array( totalStars )].map( ( n, i ) => (
                 <Star
                     key={i}
@@ -36,14 +36,14 @@ export const MovieRating = ( { totalStars, movie } ) => {
     )
 }
 
-
 /**
-                        {movie.account_states.rated ? ( <div className="">
-                            {movie.account_states.rated.value}
-                        </div>
-                        ) : (
-                                ""
-                            )
-                        }
-            <button onClick={rateMovie}>Rate it!</button>
-                */
+    {movie.account_states.rated
+        ? ( <div className="">
+    {movie.account_states.rated.value}
+        </div>
+            ) : (
+                ""
+            )
+            }
+    <button onClick={rateMovie}>Rate it!</button>
+  */

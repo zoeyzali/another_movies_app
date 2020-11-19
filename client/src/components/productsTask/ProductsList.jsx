@@ -3,22 +3,18 @@ import jsonData from '../../data/products.json'
 import { Product } from './Product'
 import { Cart } from './Cart'
 
-
 export const ProductsList = () => {
     const [products, setProducts] = useState( [] )
     const [cart, setCart] = useState( [] )
     const [quantity, setQuantity] = useState( 1 )
     const [totalPrice, setTotalPrice] = useState( 0 )
 
-
     useEffect( () => {
         const data = jsonData.products
         setProducts( data )
-        // console.log( data, "data" )
         localStorage.setItem( 'cart', JSON.stringify
             ( cart ) )
     }, [cart] )
-
 
     const addToCart = ( item ) => {
         let productId = item.id
@@ -37,13 +33,11 @@ export const ProductsList = () => {
             // tempCart[index].quantity += Number( tempCart[index].quantity ) + Number( productQty )
             setCart( tempCart )
             setQuantity( tempCart[index].quantity )
-
         } else {
             setCart( cart => [...cart, item] )
         }
         setTotalPrice( totalPrice => totalPrice + item.subTotal )
     }
-
 
     const removeCartItem = ( id ) => {
         const filtered = [...cart]
@@ -67,7 +61,6 @@ export const ProductsList = () => {
             return item.id === productId
         } )
     }
-
 
     return (
         <div className="container">

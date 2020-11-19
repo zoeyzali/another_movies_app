@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { genresList } from '../../utils/genresList'
 import { RouletteResults } from './RouletteResults'
 
-
 export const MovieRoulette = ( props ) => {
     const [state, setState] = useState( {
         genres: genresList,
@@ -10,8 +9,6 @@ export const MovieRoulette = ( props ) => {
         currentGenre: "",
         elMssg: "",
     } )
-
-
 
     const closeModals = () => {
         props.closeModals()
@@ -36,8 +33,6 @@ export const MovieRoulette = ( props ) => {
             isSelected: state.isSelected
         } )
     }
-
-
 
     return (
         <React.Fragment>
@@ -83,5 +78,3 @@ export const MovieRoulette = ( props ) => {
         </React.Fragment>
     )
 }
-
-

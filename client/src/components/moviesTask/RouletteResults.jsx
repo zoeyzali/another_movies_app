@@ -14,7 +14,8 @@ export const RouletteResults = ( props ) => {
     useEffect( () => {
         const loadData = async () => {
             setLoading( true )
-            const genresRes = await fetch( `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=8&vote_count.gte=10&with_genres=${props.id}
+            const genresRes = await fetch(
+                `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=8&vote_count.gte=10&with_genres=${props.id}
     `)
             const genresJson = await genresRes.json()
             setLoading( false )
@@ -46,8 +47,6 @@ export const RouletteResults = ( props ) => {
     //     const movie = movies[getRandom( movies.length )]
     // }
 
-
-
     // const userPickedGenre = ( id ) => {
     //     const shuffledGenres = data.filter( genre => genre.id === id )
     //     const tempSelected = shuffledGenres.length > 0 ? shuffledGenres[0] : null
@@ -71,7 +70,6 @@ export const RouletteResults = ( props ) => {
         return mapped
     }
 
-
     return (
         <React.Fragment>
             {loading && <div className="loading__wrapper">
@@ -82,11 +80,3 @@ export const RouletteResults = ( props ) => {
         </React.Fragment>
     )
 }
-
-
-
-
-
-
-
-

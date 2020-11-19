@@ -7,21 +7,23 @@ export const Header = () => {
         <header>
             <div className="navbar__wrapper">
                 <div className="logo_wrapper">
-                    { // <img src={logo} alt={logo} className="logo__svg" />
-                    }
                 </div>
                 <nav>
                     <ul className="navlinks__list">
                         <Link to="/movies" className="navlinks__item">
-                            Movies Task</Link>
+                            Movies Task
+                            </Link>
                         <Link to="/products" className="navlinks__item">
-                            Products Task</Link>
+                            Products Task
+                            </Link>
                         <li className="navlinks__item">
-                            Settings</li>
+                            Settings
+                            </li>
                     </ul>
-
                 </nav>
             </div>
         </header>
     )
 }
+/**      // <img src={logo} alt={logo} className="logo__svg" />
+ */

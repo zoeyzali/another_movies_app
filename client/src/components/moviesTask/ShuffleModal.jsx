@@ -4,7 +4,8 @@ import ReactDom from 'react-dom'
 import { MovieRoulette } from './MovieRoulette'
 
 export const ShuffleModal = ( { isOpen, hide } ) => (
-    isOpen ? ReactDom.createPortal(
+    isOpen
+        ? ReactDom.createPortal(
         <React.Fragment>
             <div className="modal__overlay" />
             <div className="modal">
@@ -14,5 +15,6 @@ export const ShuffleModal = ( { isOpen, hide } ) => (
                 <MovieRoulette closeModals={hide} />
             </div>
         </React.Fragment>, document.body
-    ) : null
+        )
+        : null
 )

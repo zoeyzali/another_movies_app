@@ -17,6 +17,5 @@ export const useConfig = () => {
         tmdbUrls()
     }, [] )
 
-
     return baseUrl
 }

@@ -25,8 +25,6 @@ export const Product = ( props ) => {
         setQuantity( props.quantity )
     }
 
-
-
     return (
         <div key={product.id} className="product__card">
             <figure>
@@ -65,14 +63,13 @@ export const Product = ( props ) => {
         </button>
             </div>
             <div className="btn__row">
-                <button type="submit" className="add__btn"
-                    onClick={handleSubmit}
-                >
+                <button
+                    type="submit"
+                    className="add__btn"
+                    onClick={handleSubmit}>
                     ADD To CART
                 </button>
             </div>
         </div>
     )
 }
-
-

@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './movie-details.css'
 import { MovieRating } from './MovieRating'
 
-
 export const MovieDetails = ( { match } ) => {
     const { params: { id } } = match
-    // console.log( match, id )
     const [movie, setMovie] = useState()
     const backdropUrl = `https://image.tmdb.org/t/p/w780`
     const [credits, setCredits] = useState( {} )
@@ -21,7 +19,6 @@ export const MovieDetails = ( { match } ) => {
         movieDetails()
     }, [id] )
 
-
     return (
         <div className="movies__detail wrapper">
             {movie &&
@@ -32,27 +29,26 @@ export const MovieDetails = ( { match } ) => {
                         </span>
                         <h3>{movie.title}</h3>
                     </div>
-
                     {credits.length > 0 && credits.map( crew =>
                         // console.log( crew, "crew" )
-                        crew && crew.job === "Director" ?
-                            <p key={crew.id} >
+                        crew && crew.job === "Director"
+                            ? <p key={crew.id} >
                                 {crew.name}
                             </p>
                             : ""
                     )}
                     <div className="details__wrapper">
                         <figure>
-                            <img src={`${backdropUrl}/${movie.backdrop_path ? movie.backdrop_path : movie.poster_path}`} alt={movie.title}
-                            />
+                            <img src={`${backdropUrl}/${movie.backdrop_path ? movie.backdrop_path : movie.poster_path}`}
+                                alt={movie.title} />
                         </figure>
                         <p>{movie.overview}</p>
                     </div>
                     <div className="rating">
-                        <MovieRating totalStars={10}
-                            movie={movie} id={movie.id}
-                        // rated={movie.account_states.rated.value}
-                        />
+                        <MovieRating
+                            totalStars={10}
+                            movie={movie}
+                            id={movie.id} />
                     </div>
                     <div className="content__headings">
                         <p>Rating:</p>
@@ -69,14 +65,15 @@ export const MovieDetails = ( { match } ) => {
                     </div>
                     <div className="content__headings">
                         <p>Country:</p>
-                        {movie.production_countries && movie.production_countries.length > 0 ?
-                            movie.production_countries.map( country => {
+                        {movie.production_countries && movie.production_countries.length > 0
+                            ? movie.production_countries.map( country => {
                                 return (
                                     <span key={country.iso_3166_1}>
                                         {country.iso_3166_1.toUpperCase()}
                                     </span>
                                 )
-                            } ) : null
+                            } )
+                            : null
                         }
                     </div>
                 </div>
